@@ -193,22 +193,22 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
                             pass 
 
                     #Write number of each class to the screen
-                    cv2.rectangle(im0, (0,0), (190, 75), (0, 0, 0), -1)
+                    cv2.rectangle(im0, (0,0), (95, 37), (0, 0, 0), -1)
 
                     class_name_count = 'Oyster-Closed'
                     l = s[1:s.find(class_name_count)].split()[-1]
                     if class_name_count in s:
-                        cv2.putText(im0,class_name_count + " " + l,(5, 15), cv2.FONT_HERSHEY_COMPLEX, 0.5,(255,255,255),1,cv2.LINE_AA)
+                        cv2.putText(im0,class_name_count + " " + l,(2, 7), cv2.FONT_HERSHEY_COMPLEX, 0.25,(255,255,255),1,cv2.LINE_AA)
 
                     class_name_count = 'Oyster-Open'
                     l = s[1:s.find(class_name_count)].split()[-1]
                     if class_name_count in s:
-                        cv2.putText(im0,class_name_count + " " + l,(5, 40), cv2.FONT_HERSHEY_COMPLEX, 0.5,(255,255,255),1,cv2.LINE_AA)
+                        cv2.putText(im0,class_name_count + " " + l,(2, 20), cv2.FONT_HERSHEY_COMPLEX, 0.25,(255,255,255),1,cv2.LINE_AA)
             
                     class_name_count = 'Oyster-SemiOpen'
                     l = s[1:s.find(class_name_count)].split()[-1]
                     if class_name_count in s:
-                        cv2.putText(im0,class_name_count + " " + l,(5, 65), cv2.FONT_HERSHEY_COMPLEX, 0.5,(255,255,255),1,cv2.LINE_AA)
+                        cv2.putText(im0,class_name_count + " " + l,(2, 32), cv2.FONT_HERSHEY_COMPLEX, 0.25,(255,255,255),1,cv2.LINE_AA)
     
             # Print time (inference-only)
             LOGGER.info(f'{s}Done. ({t3 - t2:.3f}s)')

@@ -143,9 +143,9 @@ class Annotator:
             if label:
                 tf = max(self.lw - 1, 1)  # font thicknes
                 xmax, xmin, ymax, ymin = max(poly[0::2]), min(poly[0::2]), max(poly[1::2]), min(poly[1::2])
-
-                #Get the center of the BBox to draw angle
+                #print('xmax: %3f, xmin: %3f, ymax: %3f, ymin: %3f\n' % (xmax, xmin, ymax, ymin))
                 
+                #Get the center of the BBox to draw angle
                 center_xVal = int((xmin + xmax) / 2)
                 center_yVal = int((ymin + ymax) / 2)
 
@@ -162,24 +162,20 @@ class Annotator:
                     width = (1/(pow(math.cos(theta), 2) - pow(math.sin(theta), 2)) * (non_rot_width * math.cos(theta) -non_rot_height * math.sin(theta)))
                     height = (1/(pow(math.cos(theta), 2) - pow(math.sin(theta), 2)) * (-non_rot_width * math.sin(theta) + non_rot_height * math.cos(theta)))
                 else:
-                    width = math.sin(theta) * non_rot_height + math.cos(theta) * non_rot_width
-                    height = math.sin(theta) * non_rot_width + math.cos(theta) * non_rot_height 
+                    #width = math.sin(theta) * non_rot_height + math.cos(theta) * non_rot_width
+                    #height = math.sin(theta) * non_rot_width + math.cos(theta) * non_rot_height
+                    width = (1/(pow(math.cos(-theta), 2) - pow(math.sin(-theta), 2)) * (non_rot_width * math.cos(-theta) -non_rot_height * math.sin(-theta)))
+                    height = (1/(pow(math.cos(-theta), 2) - pow(math.sin(-theta), 2)) * (-non_rot_width * math.sin(-theta) + non_rot_height * math.cos(-theta)))
 
                 if abs(width) > abs(height): 
                     rotation_factor = height/width
                 elif abs(height) >= abs(width):
                     rotation_factor = width/height
 
-                length = (max(abs(non_rot_width), abs(non_rot_height)) * rotation_factor)/2
+                weighted_rot_factor = ((rotation_factor * (width * height))/max(width, height))/100 
+                rotation_in_degrees = math.degrees(theta) 
 
-                pi_over_two = (3.14159/4)
-
-                #if (rotation_factor > 0.34 and rotation_factor < 0.36) or (rotation_factor > 0.46 and rotation_factor < 0.48):
-                #    print('Width\n', width)
-                #    print('Height\n', height)
-                #    print('Theta\n', theta)
-
-                #print('\n', int(sign_of_theta[0]), label)     
+                length = (max(abs(non_rot_width), abs(non_rot_height)) * rotation_factor)/2 
 
                 if int(sign_of_theta[0]) == -1:
                     end_xVal = int(center_xVal + (length * math.cos(theta) * -1))
@@ -191,20 +187,19 @@ class Annotator:
                 arr_color = [alt_color * (rotation_factor * 2) for alt_color in color]
                 end_point = (end_xVal, end_yVal)
                 cv2.arrowedLine(self.im_cv2, start_point, end_point, arr_color, thickness=self.lw)
-
-                #print('xmax: %3f, xmin: %3f, ymax: %3f, ymin: %3f\n' % (xmax, xmin, ymax, ymin))  
+  
                 x_label, y_label = int((xmax + xmin)/2), int((ymax + ymin)/2)
                 w, h = cv2.getTextSize(label, 0, fontScale=self.lw / 6, thickness=tf)[0]  # text width, height
-                #Plot the polygon in white using the cords obtained above, use rectangle instead
+                #Plot the polygon in white using the cords obtained above, use contours instead
                 #cv2.polylines(self.im_cv2, [poly_list], True, (255,255,255))
                 
                 cv2.rectangle(
                                 self.im_cv2,
                                 (x_label, y_label),
-                                (x_label + int(1.5*w) + 1, y_label + int(1.5*h)),
+                                (x_label + int(1.7*w) + 1, y_label + int(1.5*h)),
                                 color, -1, cv2.LINE_AA
                             )
-                cv2.putText(self.im_cv2, label + " " + "%.2f" % (rotation_factor), (x_label, y_label + h), 0, self.lw / 6, txt_color, thickness=tf, lineType=cv2.LINE_AA)
+                cv2.putText(self.im_cv2, label + " " + "%.2f" % (weighted_rot_factor) + " rot: %2.f" % rotation_in_degrees, (x_label, y_label + h), 0, self.lw / 6, txt_color, thickness=tf, lineType=cv2.LINE_AA)
             self.im = self.im_cv2 if isinstance(self.im_cv2, Image.Image) else Image.fromarray(self.im_cv2)
 
     def rectangle(self, xy, fill=None, outline=None, width=1):
