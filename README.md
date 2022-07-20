@@ -1,12 +1,23 @@
-# Yolov5 for Oriented Object Detection
-![图片](./docs/detection.png)
-![train_batch0.jpg](./docs/train_batch6.jpg)
-![results.png](./docs/results.png)
+# Detecting the Multiple States of Oyster Activity and Orientation using Deep Learning Image Processing and Computer Vision Algorithms
 
-The code for the implementation of “[Yolov5](https://github.com/ultralytics/yolov5) + [Circular Smooth Label](https://arxiv.org/abs/2003.05597v2)”. 
+## This research project was done at Salisbury University as part of the NSF REU Summer 2022 Program
+## Researchers:
+### - Joshua Comfort
+### - Ian Rudy
+
+# References: 
+- [YOLOv5](https://github.com/ultralytics/yolov5)
+- [YOLOv5_OBB](https://github.com/hukaixuan19970627/yolov5_obb)
+- [Arbitrary-Oriented Object Detection](https://arxiv.org/abs/2003.05597v2)
+- [Arbitrary-Oriented Object Detection Transformer] (https://arxiv.org/abs/2205.12785)
+- [Detecting and Counting Oysters] (https://arxiv.org/abs/2105.09758)
 
 # Results and Models
 The results on **DOTA_subsize1024_gap200_rate1.0** test-dev set are shown in the table below. (**password: yolo**)
+
+![图片](./docs/detection.png)
+![train_batch0.jpg](./docs/train_batch6.jpg)
+![results.png](./docs/results.png)
 
  |Model<br><sup>(download link) |Size<br><sup>(pixels) | TTA<br><sup>(multi-scale/<br>rotate testing) | OBB mAP<sup>test<br><sup>0.5<br>DOTAv1.0 | OBB mAP<sup>test<br><sup>0.5<br>DOTAv1.5 | OBB mAP<sup>test<br><sup>0.5<br>DOTAv2.0 | Speed<br><sup>CPU b1<br>(ms)|Speed<br><sup>2080Ti b1<br>(ms) |Speed<br><sup>2080Ti b16<br>(ms) |params<br><sup>(M) |FLOPs<br><sup>@640 (B) 
  | ----                                                                                                                                                           | ---  | ---   | ---      | ---   | ---   | ---   | ---   | --- | --- | ---
