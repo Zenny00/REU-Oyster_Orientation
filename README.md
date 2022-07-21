@@ -28,6 +28,7 @@
 - [Oyster detection system](https://github.com/bsadr/oyster-detection)
 - [In Chesapeake Oysters’ Future: Underwater Drones, Shellfish Barges?](https://southernmarylandchronicle.com/2021/04/20/in-chesapeake-oysters-future-underwater-drones-shellfish-barges/)
 - [PyTorch - YOLOv5](https://pytorch.org/hub/ultralytics_yolov5/)
+- [DenseDepth](https://github.com/ialhashim/DenseDepth)
 
 ## Methods:
 
