@@ -6,7 +6,7 @@
 
 ## Faculty Mentors:
 ### - Dr. Yuanwei Jin
-### - Dr. Enyue (Annie) 
+### - Dr. Enyue (Annie) Lu
 
 ## Project Title:
 *Image Processing and Computer Vision Algorithms for Sustainable Shellfish Farming*
