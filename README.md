@@ -47,9 +47,8 @@ In addition, inference was run on sample videos and images which can be seen in 
 ### - Orientation
 
 # Results
-![图片](./docs/detection.png)
-![train_batch0.jpg](./docs/train_batch6.jpg)
-![results.png](./docs/results.png)
+![BeforeInference.jpg](./docs/InferenceTestImage9.jpg)
+![AfterInference.jpg](./docs/TestImg5.jpg)
 
  |Model<br><sup>(download link) |Size<br><sup>(pixels) | TTA<br><sup>(multi-scale/<br>rotate testing) | OBB mAP<sup>test<br><sup>0.5<br>DOTAv1.0 | OBB mAP<sup>test<br><sup>0.5<br>DOTAv1.5 | OBB mAP<sup>test<br><sup>0.5<br>DOTAv2.0 | Speed<br><sup>CPU b1<br>(ms)|Speed<br><sup>2080Ti b1<br>(ms) |Speed<br><sup>2080Ti b16<br>(ms) |params<br><sup>(M) |FLOPs<br><sup>@640 (B) 
  | ----                                                                                                                                                           | ---  | ---   | ---      | ---   | ---   | ---   | ---   | --- | --- | ---
