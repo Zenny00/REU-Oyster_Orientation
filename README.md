@@ -73,7 +73,7 @@ Below are some examples of inference run on various images, the classes are show
 
 For information on running either training or inference using this project please refer to the [Getting Started](./docs/GetStart.md) document.
 
-#Authors
+# Authors
 ```javascript
   Name  : "Joshua Comfort"
   Institution："Salisbury University"
