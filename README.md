@@ -54,45 +54,22 @@ To achieve better results it might prove benefitial to use depth inference or a 
 
 Basic experimentation found good results obtaining depth from 2 dimensional images using [DenseDepth](https://github.com/ialhashim/DenseDepth), examples can be seen below.
 
-<img src="./docs/DepthInference.jpg" width="450">
+<img src="./docs/DepthInference.jpg" width="550">
 
 # Results
+
+Below are some examples of inference run on various images, the classes are shown in difference colors, the first value is the predicted class, followed by the confidence value, the rotation value, and the number of degrees the oyster is rotated off axis.
+
+## Run 1
 <img src="./docs/InferenceTestImage9.jpg" width="450"> <img src="./docs/TestImg5.jpg" width="450">
 
- |Model<br><sup>(download link) |Size<br><sup>(pixels) | TTA<br><sup>(multi-scale/<br>rotate testing) | OBB mAP<sup>test<br><sup>0.5<br>DOTAv1.0 | OBB mAP<sup>test<br><sup>0.5<br>DOTAv1.5 | OBB mAP<sup>test<br><sup>0.5<br>DOTAv2.0 | Speed<br><sup>CPU b1<br>(ms)|Speed<br><sup>2080Ti b1<br>(ms) |Speed<br><sup>2080Ti b16<br>(ms) |params<br><sup>(M) |FLOPs<br><sup>@640 (B) 
- | ----                                                                                                                                                           | ---  | ---   | ---      | ---   | ---   | ---   | ---   | --- | --- | ---
- |yolov5m [[baidu](https://pan.baidu.com/s/1UPNaMuQ_gNce9167FZx8-w)/[google](https://drive.google.com/file/d/1NMgxcN98cmBg9_nVK4axxqfiq4pYh-as/view?usp=sharing)]  |1024  | ×     |**77.30** |**73.19** |**58.01**  |**328.2**      |**16.9**     |**11.3**      |**21.6**   |**50.5**   
- |yolov5s [[baidu](https://pan.baidu.com/s/1Lqw42xlSZxZn-2gNniBpmw?pwd=yolo)]    |1024  | ×     |**76.79**   |-      |-      |-      |**15.6**  | -     |**7.54**     |**17.5**    
- |yolov5n [[baidu](https://pan.baidu.com/s/1Lqw42xlSZxZn-2gNniBpmw?pwd=yolo)]    |1024  | ×     |**73.26**   |-      |-      |-      |**15.2**  | -     |**2.02**     |**5.0**
+## Run 2
+<img src="./docs/InferenceTestImage1.jpg" width="450"> <img src="./docs/TestImg.jpg" width="450">
 
-
-<details>
-  <summary>Table Notes (click to expand / **点我看更多**)</summary>
-
-* All checkpoints are trained to 300 epochs with [COCO pre-trained checkpoints](https://github.com/ultralytics/yolov5/releases/tag/v6.0), default settings and hyperparameters.
-* **mAP<sup>test dota</sup>** values are for single-model single-scale on [DOTA](https://captain-whu.github.io/DOTA/index.html)(1024,1024,200,1.0) dataset.<br>Reproduce Example:
- ```shell
- python val.py --data 'data/dotav15_poly.yaml' --img 1024 --conf 0.01 --iou 0.4 --task 'test' --batch 16 --save-json --name 'dotav15_test_split'
- python tools/TestJson2VocClassTxt.py --json_path 'runs/val/dotav15_test_split/best_obb_predictions.json' --save_path 'runs/val/dotav15_test_split/obb_predictions_Txt'
- python DOTA_devkit/ResultMerge_multi_process.py --scrpath 'runs/val/dotav15_test_split/obb_predictions_Txt' --dstpath 'runs/val/dotav15_test_split/obb_predictions_Txt_Merged'
- zip the poly format results files and submit it to https://captain-whu.github.io/DOTA/evaluation.html
- ```
-* **Speed** averaged over DOTAv1.5 val_split_subsize1024_gap200 images using a 2080Ti gpu. NMS + pre-process times is included.<br>Reproduce by `python val.py --data 'data/dotav15_poly.yaml' --img 1024 --task speed --batch 1`
-
-
-</details>
-
-# [Updates](./docs/ChangeLog.md)
-- [2022/1/7] : **Faster and stronger**, some bugs fixed, yolov5 base version updated.
-
-
-# Installation
-Please refer to [install.md](./docs/install.md) for installation and dataset preparation.
+## Run 3
+<img src="./docs/InferenceTestImage4.jpg" width="300"> <img src="./docs/Before1.jpg" width="300">
 
 # Getting Started 
-This repo is based on [yolov5](https://github.com/ultralytics/yolov5). 
-
-And this repo has been rebuilt, Please see [GetStart.md](./docs/GetStart.md) for the Oriented Detection latest basic usage.
 
 #  Acknowledgements
 I have used utility functions from other wonderful open-source projects. Espeicially thank the authors of:
