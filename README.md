@@ -5,8 +5,8 @@
 - [NSF REU Salisbury Homepage](http://faculty.salisbury.edu/~ealu/REU/Schedule.html)
 
 ## Faculty Mentors:
-### - Dr. Enyue (Annie) 
 ### - Dr. Yuanwei Jin
+### - Dr. Enyue (Annie) 
 
 ## Project Title:
 *Image Processing and Computer Vision Algorithms for Sustainable Shellfish Farming*
@@ -36,8 +36,10 @@ The oyster detection dataset can be found under the dataset directory, it was co
 
 The dataset contains images spanning various environments and camera angles to help increase the model's ability to generalize the features that make up an oyster. The oysters contained in the images are classified into one of three states oyster-closed, oyster-semi-open, and oyster-fully-open. Improvements to the dataset that would help improve model perfromance include a greater number of images, image processing to clean up the images, and a consistent metric to help label oyster states accurately (This project used metrics proposed in a project done by researchers at UMES).
 
+The dataset was exported from Roboflow using the Oriented Bounding Box format, however, the exportation from roboflow had some issues and the exported txt files contained negative coordinate values. To remove the negative values from the dataset, a shell script was written and can be found under the tools directory. A guide on how to properly format your own dataset using roboflow and the script can be found under the getting started guide.
+
 ### - Training
-The training for this research was using [Google Colab](https://colab.research.google.com/), Colab provides remote access to high-performance computing on GPU instances. By leveraging Google's services we trained these models under various numbers of epochs, dataset iterations, and backbones. The achieved results are shown below in the section *Results*. 
+The training for this research was done using [Google Colab](https://colab.research.google.com/), Colab provides remote access to high-performance computing on GPU instances. By leveraging Google's services we trained these models under various numbers of epochs, dataset iterations, and backbones. The achieved results are shown below in the section *Results*. 
 
 ### - Evaluation
 The models were evaluated using these common metrics [precision](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall), [recall](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall), [average precision (AP)](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_482), and [mean average precision (mAP)](https://www.v7labs.com/blog/mean-average-precision#:~:text=Average%20Precision%20is%20calculated%20as,mAP%20varies%20in%20different%20contexts.)
@@ -45,6 +47,7 @@ The models were evaluated using these common metrics [precision](https://develop
 In addition, inference was run on sample videos and images which can be seen in the *Results* section.
 
 ### - Orientation
+One complication that arose when try to detect oysters' activity, is that oysters are not always oriented ways that make classification feasible. To help remedy this, this project also sought to detect the orientation of oysters to allow for a more accurate classification of activity. Using the [YOLOv5_OBB](https://github.com/hukaixuan19970627/yolov5_obb) oysters were localized with rotated bounding boxes to more closely fit their contours. Additionally, color coded arrows were drawn parallel to the axis of orientation
 
 # Results
 <img src="./docs/InferenceTestImage9.jpg" width="450"> <img src="./docs/TestImg5.jpg" width="450">
