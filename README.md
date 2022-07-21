@@ -52,7 +52,7 @@ One complication that arose when try to detect oysters' activity, is that oyster
 
 To achieve better results it might prove benefitial to use depth inference or a depth camera to retrieve depth information from the scene, allowing for three dimensional data to be used. 
 
-Basic experimentation found good results obtaining depth from 2 dimensional images using [DenseDepth](https://github.com/ialhashim/DenseDepth), examples can be seen below.
+Basic experimentation found good results obtaining depth from 2-dimensional images using [DenseDepth](https://github.com/ialhashim/DenseDepth), examples can be seen below.
 
 <img src="./docs/DepthInference.jpg" width="800">
 
