@@ -47,7 +47,13 @@ The models were evaluated using these common metrics [precision](https://develop
 In addition, inference was run on sample videos and images which can be seen in the *Results* section.
 
 ### - Orientation
-One complication that arose when try to detect oysters' activity, is that oysters are not always oriented ways that make classification feasible. To help remedy this, this project also sought to detect the orientation of oysters to allow for a more accurate classification of activity. Using the [YOLOv5_OBB](https://github.com/hukaixuan19970627/yolov5_obb) oysters were localized with rotated bounding boxes to more closely fit their contours. Additionally, color coded arrows were drawn parallel to the axis of orientation
+One complication that arose when try to detect oysters' activity, is that oysters are not always oriented ways that make classification feasible. To help remedy this, this project also sought to detect the orientation of oysters to allow for a more accurate classification of activity. Using the [YOLOv5_OBB](https://github.com/hukaixuan19970627/yolov5_obb) oysters were localized with rotated bounding boxes to more closely fit their contours. Additionally, color coded arrows were drawn parallel to the axis of orientation and the arrow length was coded to the ratio of length to width times the area of the box.
+
+To achieve better results it might prove benefitial to use depth inference or a depth camera to retrieve depth information from the scene, allowing for three dimensional data to be used. 
+
+Basic experimentation found good results obtaining depth from 2 dimensional images using [DenseDepth](https://github.com/ialhashim/DenseDepth), examples can be seen below.
+
+<img src="./docs/DepthInference.jpg" width="450">
 
 # Results
 <img src="./docs/InferenceTestImage9.jpg" width="450"> <img src="./docs/TestImg5.jpg" width="450">
