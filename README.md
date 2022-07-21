@@ -61,10 +61,10 @@ Basic experimentation found good results obtaining depth from 2 dimensional imag
 Below are some examples of inference run on various images, the classes are shown in difference colors, the first value is the predicted class, followed by the confidence value, the rotation value, and the number of degrees the oyster is rotated off axis.
 
 ## Run 1
-<img src="./docs/InferenceTestImage9.jpg" width="450"> <img src="./docs/TestImg5.jpg" width="450">
+<img src="./docs/InferenceTestImage9.jpg" width="300"> <img src="./docs/TestImg5.jpg" width="300">
 
 ## Run 2
-<img src="./docs/InferenceTestImage1.jpg" width="450"> <img src="./docs/TestImg.jpg" width="450">
+<img src="./docs/InferenceTestImage1.jpg" width="300"> <img src="./docs/TestImg.jpg" width="300">
 
 ## Run 3
 <img src="./docs/InferenceTestImage4.jpg" width="300"> <img src="./docs/Before1.jpg" width="300">
