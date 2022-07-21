@@ -56,6 +56,8 @@ Basic experimentation found good results obtaining depth from 2-dimensional imag
 
 <img src="./docs/DepthInference.jpg" width="800">
 
+This depth information could be fed into a network similar to this which infers orientation, another model could then take this orientation information and use it to more accurately classify oyster activity.
+
 # Results
 
 Below are some examples of inference run on various images, the classes are shown in difference colors, the first value is the predicted class, followed by the confidence value, the rotation value, and the number of degrees the oyster is rotated off axis.
