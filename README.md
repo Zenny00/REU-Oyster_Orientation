@@ -54,7 +54,7 @@ To achieve better results it might prove benefitial to use depth inference or a 
 
 Basic experimentation found good results obtaining depth from 2 dimensional images using [DenseDepth](https://github.com/ialhashim/DenseDepth), examples can be seen below.
 
-<img src="./docs/DepthInference.jpg" width="550">
+<img src="./docs/DepthInference.jpg" width="800">
 
 # Results
 
@@ -71,28 +71,10 @@ Below are some examples of inference run on various images, the classes are show
 
 # Getting Started 
 
-#  Acknowledgements
-I have used utility functions from other wonderful open-source projects. Espeicially thank the authors of:
-
-* [ultralytics/yolov5](https://github.com/ultralytics/yolov5).
-* [Thinklab-SJTU/CSL_RetinaNet_Tensorflow](https://github.com/Thinklab-SJTU/CSL_RetinaNet_Tensorflow).
-* [jbwang1997/OBBDetection](https://github.com/jbwang1997/OBBDetection)
-* [CAPTAIN-WHU/DOTA_devkit](https://github.com/CAPTAIN-WHU/DOTA_devkit)
-## More detailed explanation
-想要了解相关实现的细节和原理可以看我的知乎文章:   
-* [自己改建YOLOv5旋转目标的踩坑记录](https://www.zhihu.com/column/c_1358464959123390464).
-
-## 有问题反馈
-在使用中有任何问题，建议先按照[install.md](./docs/install.md)检查环境依赖项，再按照[GetStart.md](./docs/GetStart.md)检查使用流程是否正确，善用搜索引擎和github中的issue搜索框，可以极大程度上节省你的时间。
-
-若遇到的是新问题，可以用以下联系方式跟我交流，为了提高沟通效率，请尽可能地提供相关信息以便我复现该问题。
-
-* 知乎（@[略略略](https://www.zhihu.com/people/lue-lue-lue-3-92-86)）
-* 代码问题提issues,其他问题请知乎上联系
-
-## 关于作者
+For information on running either training or inference using this project please refer to the [Getting Started](./docs/GetStart.md) document.
 
 ```javascript
-  Name  : "胡凯旋"
-  describe myself："咸鱼一枚"
-
+  Name  : "Joshua Comfort"
+  Institution："Salisbury University"
+  
+  Name  : "Ian Rudy"
