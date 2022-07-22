@@ -50,13 +50,11 @@ The models were evaluated using these common metrics [precision](https://develop
 ### - Orientation
 One complication that arose when try to detect oysters' activity, is that oysters are not always oriented ways that make classification feasible. To help remedy this, this project also sought to detect the orientation of oysters to allow for a more accurate classification of activity. Using the [YOLOv5_OBB](https://github.com/hukaixuan19970627/yolov5_obb) oysters were localized with rotated bounding boxes to more closely fit their contours. Additionally, color coded arrows were drawn parallel to the axis of orientation and the arrow length was coded to the ratio of length to width times the area of the box.
 
-To achieve better results it might prove benefitial to use depth inference or a depth camera to retrieve depth information from the scene, allowing for three dimensional data to be used. 
-
-Basic experimentation found good results obtaining depth from 2-dimensional images using [DenseDepth](https://github.com/ialhashim/DenseDepth), examples can be seen below.
+To achieve better results it might prove benefitial to use depth inference or a depth camera to retrieve depth information from the scene, allowing for three dimensional data to be used during training. Basic experimentation found good results obtaining depth from 2-dimensional images using [DenseDepth](https://github.com/ialhashim/DenseDepth), examples can be seen below.
 
 <img src="./docs/DepthInference.jpg" width="800">
 
-This depth information could be fed into a network similar to this which infers orientation, another model could then take this orientation information and use it to more accurately classify oyster activity.
+Due to the short amount of time given for this project (10 weeks) we were not able to take advantage of this information. For thoses wishing to continue this work, I recommend that you start by finding a way to use depth information to calculate the orientation of each oyster in 3-dimensions. Using 3-dimensions will allow for a more accurate calculation of orientation thus allowing for better and more accurate information to be used in classification. The head of this model can be removed and the information output can be fed into another model which will use both the contours and orientation to make a more accurate classication of the oyster.  
 
 # Results
 
