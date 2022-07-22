@@ -123,7 +123,7 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
         # NMS
         # pred: list*(n, [xylsθ, conf, cls]) θ ∈ [-pi/2, pi/2)
         pred = non_max_suppression_obb(pred, conf_thres, iou_thres, classes, agnostic_nms, multi_label=True, max_det=max_det)
-        #print('\n', pred)
+        print('\n', pred)
         dt[2] += time_sync() - t3
 
         # Second-stage classifier (optional)

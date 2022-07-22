@@ -196,7 +196,7 @@ class Annotator:
                 cv2.rectangle(
                                 self.im_cv2,
                                 (x_label, y_label),
-                                (x_label + int(1.7*w) + 1, y_label + int(1.5*h)),
+                                (x_label + int(1.8*w) + 1, y_label + int(1.5*h)),
                                 color, -1, cv2.LINE_AA
                             )
                 cv2.putText(self.im_cv2, label + " " + "%.2f" % (weighted_rot_factor) + " rot: %2.f" % rotation_in_degrees, (x_label, y_label + h), 0, self.lw / 6, txt_color, thickness=tf, lineType=cv2.LINE_AA)
