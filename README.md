@@ -46,7 +46,7 @@ The training for this research was done using [Google Colab](https://colab.resea
 The models were evaluated using these common metrics [precision](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall), [recall](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall), [average precision (AP)](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_482), and [mean average precision (mAP)](https://www.v7labs.com/blog/mean-average-precision#:~:text=Average%20Precision%20is%20calculated%20as,mAP%20varies%20in%20different%20contexts.)
 
 ##### Mean Average Precision
-<img src="./docs/mAP.jpg" width="800">
+<img src="./docs/mAP.jpg" width="400">
 
 In addition to these metrics, the training and validation are evaluated using a [loss function](https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/). A loss function helps show how far the model is from the ground truth value (the correct answer). Graphs of both the training and validation loss can be seen below:
 
