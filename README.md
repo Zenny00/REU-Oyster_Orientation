@@ -63,7 +63,7 @@ To achieve better results it might prove benefitial to use depth inference or a 
 
 <img src="./docs/DepthInference.jpg" width="800">
 
-Due to the short amount of time given for this project (10 weeks) we were not able to take advantage of this information. For thoses wishing to continue this work, I recommend that you start by finding a way to use depth information to calculate the orientation of each oyster in 3-dimensions. Using 3-dimensions will allow for a more accurate calculation of orientation thus allowing for better and more accurate information to be used in classification. The head of this model can be removed and the information output can be fed into another model which will use both the contours and orientation to make a more accurate classication of the oyster.  
+Due to the short amount of time given for this project (10 weeks) we were not able to take advantage of this information. For thoses wishing to continue this work, I recommend that you start by finding a way to use depth information to calculate the orientation of each oyster in 3-dimensions. Using 3-dimensions will allow for a more accurate calculation of orientation thus allowing for better and more accurate information to be used in classification. The head of this model can be removed and the information output can be fed into another model which will use both the contours and orientation to make a more accurate classication of the oyster. Skhadem's [3D Bounding Box Estimation Using Deep Learning and Geometry](https://github.com/skhadem/3D-BoundingBox) shows a good example of 3-dimensional bounding boxes in use.
 
 # Results
 
