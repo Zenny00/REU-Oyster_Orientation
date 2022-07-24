@@ -45,11 +45,16 @@ The training for this research was done using [Google Colab](https://colab.resea
 ### - Evaluation
 The models were evaluated using these common metrics [precision](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall), [recall](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall), [average precision (AP)](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_482), and [mean average precision (mAP)](https://www.v7labs.com/blog/mean-average-precision#:~:text=Average%20Precision%20is%20calculated%20as,mAP%20varies%20in%20different%20contexts.)
 
-(Add a picture of training info here)
+##### Mean Average Precision
+<img src="./docs/mAP.jpg" width="800">
 
 In addition to these metrics, the training and validation are evaluated using a [loss function](https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/). A loss function helps show how far the model is from the ground truth value (the correct answer). Graphs of both the training and validation loss can be seen below:
 
-(Add picture of validation loss here)
+##### Training Loss
+<img src="./docs/TrainLoss.jpg" width="400">
+
+##### Validaiton Loss
+<img src="./docs/ValidLoss.jpg" width="400">
 
 ### - Orientation
 One complication that arose when try to detect oysters' activity, is that oysters are not always oriented ways that make classification feasible. To help remedy this, this project also sought to detect the orientation of oysters to allow for a more accurate classification of activity. Using the [YOLOv5_OBB](https://github.com/hukaixuan19970627/yolov5_obb) oysters were localized with rotated bounding boxes to more closely fit their contours. Additionally, color coded arrows were drawn parallel to the axis of orientation and the arrow length was coded to the ratio of length to width times the area of the box.
