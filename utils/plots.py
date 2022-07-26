@@ -144,7 +144,7 @@ class Annotator:
                 tf = max(self.lw - 1, 1)  # font thicknes
                 xmax, xmin, ymax, ymin = max(poly[0::2]), min(poly[0::2]), max(poly[1::2]), min(poly[1::2])
                 #print('xmax: %3f, xmin: %3f, ymax: %3f, ymin: %3f\n' % (xmax, xmin, ymax, ymin))
-                
+
                 #Get the center of the BBox to draw angle
                 center_xVal = int((xmin + xmax) / 2)
                 center_yVal = int((ymin + ymax) / 2)

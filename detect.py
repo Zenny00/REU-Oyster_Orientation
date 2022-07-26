@@ -116,14 +116,12 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
         # Inference
         visualize = increment_path(save_dir / Path(path).stem, mkdir=True) if visualize else False
         pred = model(im, augment=augment, visualize=visualize)
-        #print('\n', pred[0][0])
         t3 = time_sync()
         dt[1] += t3 - t2
 
         # NMS
         # pred: list*(n, [xylsθ, conf, cls]) θ ∈ [-pi/2, pi/2)
         pred = non_max_suppression_obb(pred, conf_thres, iou_thres, classes, agnostic_nms, multi_label=True, max_det=max_det)
-        print('\n', pred)
         dt[2] += time_sync() - t3
 
         # Second-stage classifier (optional)
@@ -145,17 +143,7 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
             s += '%gx%g ' % im.shape[2:]  # print string
             gn = torch.tensor(im0.shape)[[1, 0, 1, 0]]  # normalization gain whwh
             imc = im0.copy() if save_crop else im0  # for save_crop
-            annotator = Annotator(im0, line_width=line_thickness, example=str(names))
-
-            #print('Theta Angles for each BBox:')
-            #for ang in theta_list:
-            #    print('\n', ang)
-        
-            #print('\n')
-
-            #print('Degree Angles for each BBox:')
-            #for ang in theta_list:
-            #    print('\n', math.degrees(ang))
+            annotator = Annotator(im0, line_width=line_thickness, example=str(names)) 
 
             if len(det):
                 # Rescale polys from img_size to im0 size
