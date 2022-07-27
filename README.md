@@ -86,6 +86,7 @@ For information on running either training or inference using this project pleas
 ```javascript
   Name  : "Joshua Comfort"
   Institution："Salisbury University"
+  Contact: "jcomfort@gulls.salisbury.edu"
   
   Name  : "Ian Rudy"
   Institution: " "
