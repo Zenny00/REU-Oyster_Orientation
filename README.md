@@ -80,14 +80,15 @@ Below are some examples of inference run on various images, the classes are show
 
 # Getting Started 
 
-For information on running either training or inference using this project please refer to the [Getting Started](./docs/GetStart.md) document.
+For information on running either training or inference using this project please refer to the [Getting Started](./docs/GettingStarted.md) document.
 
 # Authors
 ```javascript
-  Name  : "Joshua Comfort"
-  Institution："Salisbury University"
-  Contact: "jcomfort1@gulls.salisbury.edu"
+  Name  : Joshua Comfort
+  Institution：Salisbury University
+  Contact: jcomfort1@gulls.salisbury.edu
   
-  Name  : "Ian Rudy"
-  Institution: " "
-  Contact: " "
+  Name  : Ian Rudy
+  Institution: Susquehanna University
+  Contact: rudyi@susqu.edu
+```
