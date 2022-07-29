@@ -30,7 +30,7 @@ or
 Collect images and annoatate them using Roboflow.
 Export the images into the YOLOv5 Oriented Bounding Boxes format.
 
-<img src="./docs/ImageOutput.jpg" width="400">
+<img src="./ImageOutput.jpg" width="400">
 
 At the time of writing this document, the output format has issues with negative values.
 To fix this, download the dataset and unzip it into the dataset directory.
