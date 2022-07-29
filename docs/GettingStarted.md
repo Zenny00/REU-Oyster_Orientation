@@ -68,6 +68,6 @@ python train.py --data /content/datasets/roboflow/data.yaml --epochs *your numbe
 
 To run inference using your weights or the weights provided run the following command.
 
-python detect.py --weight *path the weights* --source *path the image or video* --conf-thres *minimum confidence value i.e. 0.5* --line-thickness *thickness of the box borders* --device *0, 1, 2, cpu*
+python detect.py --weight *path to weights* --source *path to image or video* --conf-thres *minimum confidence value i.e. 0.5* --line-thickness *thickness of the box borders* --device *0, 1, 2, cpu*
 
 The output of model inference will be saved to runs/detect/exp
