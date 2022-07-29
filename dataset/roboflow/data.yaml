@@ -1,0 +1,8 @@
+path: ../datasets/roboflow
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 3
+names: ['Oyster-Closed', 'Oyster-Open', 'Oyster-SemiOpen']
