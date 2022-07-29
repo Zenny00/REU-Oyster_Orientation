@@ -70,4 +70,10 @@ To run inference using your weights or the weights provided run the following co
 
 python detect.py --weight *path to weights* --source *path to image or video* --conf-thres *minimum confidence value i.e. 0.5* --line-thickness *thickness of the box borders* --device *0, 1, 2, cpu*
 
+Note the extra-large weight file has been split in order to be uploaded to the GitHub repository.
+To unzip it use the following commands:
+
+cat xlweights.* > weights.zip
+unzip weights.zip
+
 The output of model inference will be saved to runs/detect/exp
